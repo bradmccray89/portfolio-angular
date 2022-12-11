@@ -2,13 +2,15 @@
   class="fixed top-0 flex items-center justify-between w-full h-20 px-12 nav text-dark_text dark:text-light_text"
 >
   <div>
-    <div class="text-2xl">Brandon McCray</div>
+    <div class="text-2xl px-4 py-2 cursor-pointer" routerLink="/home">
+      Brandon McCray
+    </div>
   </div>
   <div class="">
-    <div class="flex gap-x-2">
+    <div class="flex">
       <div
         *ngFor="let nav of navList"
-        class="px-4 py-2 rounded-lg cursor-pointer hover:bg-pastel_green/50 dark:hover:bg-dark_pastel_green/50"
+        class="px-4 py-2 cursor-pointer hover:bg-pastel_green/50 dark:hover:bg-dark_pastel_green/50"
         [routerLink]="nav.link"
         routerLinkActive="active"
       >
@@ -17,6 +19,11 @@
     </div>
   </div>
   <div>
-    <button class="" (click)="toggleDarkMode()">Toggle Dark Mode</button>
+    <button
+      class="border border-pastel_green px-4 py-2"
+      (click)="toggleDarkMode()"
+    >
+      Toggle Dark Mode
+    </button>
   </div>
 </div>
