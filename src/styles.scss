@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --platinum: #e0e1ddff;
+  --dark_platinum: #45473fff;
+}
+
 * {
   @apply font-light subpixel-antialiased tracking-widest text-dark_text dark:text-light_text transition-colors duration-500;
 }
