@@ -1,3 +1,14 @@
-.radio-button {
-  @apply bg-pastel_green checked:text-green h-4 w-4 border-2 border-gray-400 rounded-full;
+#btn-about:hover {
+  & > #icon-arrow-right {
+    animation: arrow-right 0.5s ease-in infinite alternate;
+  }
+}
+
+@keyframes arrow-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
 }

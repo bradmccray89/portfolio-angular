@@ -11,22 +11,27 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { animation: 'home' },
   },
   {
     path: 'about',
     component: AboutComponent,
+    data: { animation: 'about' },
   },
   {
     path: 'contact',
     component: ContactComponent,
+    data: { animation: 'contact' },
   },
   {
     path: 'projects',
     component: ProjectsComponent,
+    data: { animation: 'projects' },
   },
   {
     path: 'blog',
     component: BlogComponent,
+    data: { animation: 'blog' },
   },
   {
     path: '**',

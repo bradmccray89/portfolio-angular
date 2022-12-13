@@ -1,11 +1,11 @@
 import {
   trigger,
-  state,
   style,
   transition,
   animate,
   query,
   stagger,
+  group,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,35 +15,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
   animations: [
     trigger('menuAnimation', [
-      transition('* <=> *', [
-        query(
-          ':enter',
-          [
+      transition(':enter', [
+        group([
+          query(':self', [
+            style({ opacity: 0 }),
+            animate('500ms ease-out', style({ opacity: 1 })),
+          ]),
+          query(':enter', [
             style({ transform: 'translateX(10%)', opacity: 0 }),
             stagger(
-              '60ms',
+              '100ms',
               animate(
                 '300ms ease-out',
                 style({ transform: 'translateX(0)', opacity: 1 })
               )
             ),
-          ],
-          { optional: true }
-        ),
-        query(
-          ':leave',
-          [
+          ]),
+        ]),
+      ]),
+      transition(':leave', [
+        group([
+          query(':self', [
+            style({ opacity: 1 }),
+            animate('500ms 200ms ease-out', style({ opacity: 0 })),
+          ]),
+          query(':leave', [
             style({ transform: 'translateX(0)', opacity: 1 }),
             stagger(
-              '60ms',
+              '100ms',
               animate(
                 '300ms ease-out',
                 style({ transform: 'translateX(10%)', opacity: 0 })
               )
             ),
-          ],
-          { optional: true }
-        ),
+          ]),
+        ]),
       ]),
     ]),
   ],

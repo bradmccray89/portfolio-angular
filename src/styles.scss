@@ -8,7 +8,11 @@
 }
 
 * {
-  @apply font-light subpixel-antialiased tracking-widest text-dark_text dark:text-light_text transition-colors duration-500;
+  @apply font-light subpixel-antialiased tracking-widest text-dark_text dark:text-light_text transition-all duration-500;
+}
+
+.page-container {
+  @apply flex flex-col items-center justify-start w-full h-full overflow-x-hidden overflow-y-auto md:justify-evenly gap-y-6 md:flex-row;
 }
 
 .active {

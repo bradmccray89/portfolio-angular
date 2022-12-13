@@ -1,15 +1,32 @@
-<div
-  class="flex flex-col items-center justify-start w-full h-full overflow-x-hidden overflow-y-auto md:justify-evenly gap-y-6 md:flex-row"
->
+<div class="page-container">
   <div
-    class="relative order-2 md:order-1 w-[90%] max-w-[400px] flex flex-col gap-4 p-6 bg-lavender/50 mb-20 md:my-20"
+    class="relative order-2 md:order-1 w-[90%] max-w-[400px] flex flex-col gap-4 p-6 bg-lavender/50 mb-20 md:my-20 text-lg"
   >
-    <div>Hi! I'm Brandon</div>
-    <div>
-      {{ summaryList[2].content }}
-    </div>
-    <div *ngIf="summaryList[2].contentExtended">
-      {{ summaryList[2].contentExtended }}
+    <div class="text-xl">Hi! I'm Brandon</div>
+    <div>I build things for the web.</div>
+    <div class="self-center btn-container">
+      <button
+        id="btn-about"
+        class="flex items-center justify-between gap-4 px-5 py-3 mt-4 duration-200 bg-green/50 dark:bg-dark_green/50 hover:bg-green/30 hover:dark:bg-dark_green/30"
+        routerLink="/about"
+      >
+        <span>About Me</span>
+        <svg
+          id="icon-arrow-right"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+          />
+        </svg>
+      </button>
     </div>
   </div>
   <div
