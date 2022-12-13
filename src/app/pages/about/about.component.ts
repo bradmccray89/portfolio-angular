@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
   animations: [
     trigger('enterAnimation', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('500ms', style({ opacity: 1 })),
+        style({ transform: 'translateX(100px)' }),
+        animate('500ms', style({ transform: 'translateX(0)' })),
       ]),
       transition(':leave', [
-        style({ opacity: 1 }),
-        animate('500ms', style({ opacity: 0 })),
+        style({ transform: 'translateX(0)' }),
+        animate('500ms', style({ transform: 'translateX(-100px)' })),
       ]),
     ]),
   ],
