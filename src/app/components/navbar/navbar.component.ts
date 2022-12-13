@@ -60,8 +60,9 @@ export class NavbarComponent implements OnInit {
   navList = [
     { name: 'Home', link: '/home' },
     { name: 'About', link: '/about' },
-    { name: 'Contact', link: '/contact' },
+    // { name: 'Blog', link: '/blog'},
     { name: 'Projects', link: '/projects' },
+    { name: 'Contact', link: '/contact' },
   ];
 
   constructor() {
