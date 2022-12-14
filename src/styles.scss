@@ -15,12 +15,12 @@
 }
 
 .background {
-  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 bg-fixed bg-center bg-cover -z-10;
+  @apply w-screen h-screen invert-[90%] dark:invert-0 bg-fixed bg-center bg-cover;
   background-image: url(/assets/images/abstract.jpg);
 }
 
 .page-container {
-  @apply flex flex-col items-center justify-center w-full h-full overflow-x-hidden overflow-y-auto gap-y-6 md:flex-row;
+  @apply flex flex-col items-center justify-center w-full h-full gap-y-6;
 }
 
 .active {
