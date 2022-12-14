@@ -15,7 +15,7 @@
 }
 
 .background {
-  @apply w-screen h-screen invert-[90%] dark:invert-0 bg-fixed bg-center bg-cover;
+  @apply w-screen h-screen bg-fixed bg-center bg-cover;
   background-image: url(/assets/images/abstract.jpg);
 }
 
