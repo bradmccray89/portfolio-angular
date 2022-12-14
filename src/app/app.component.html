@@ -1,6 +1,9 @@
 <div class="z-10 w-screen h-screen">
   <app-navbar></app-navbar>
-  <div class="w-full h-full" [@fadeInOut]="getRouterAnimation()">
+  <div
+    class="w-full h-full overflow-hidden"
+    [@fadeInOut]="getRouterAnimation()"
+  >
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
