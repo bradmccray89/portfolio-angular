@@ -1,5 +1,7 @@
 <div
-  class="fixed top-0 flex items-center justify-between w-full h-20 px-4 text-dark_text dark:text-light_text backdrop-blur-[2px] z-50"
+  *ngIf="!isHome"
+  class="fixed top-0 z-50 flex items-center justify-between w-screen h-20 px-4 text-dark_text dark:text-light_text"
+  @navAnimation
 >
   <div class="flex items-center justify-start w-[40%]">
     <div
@@ -15,7 +17,7 @@
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      class="relative flex items-center justify-center w-10 h-10 p-1 rounded-full lg:transform-none md:relative md:left-0 hover:bg-pastel_green/50"
+      class="relative flex items-center justify-center w-10 h-10 p-1 rounded-full lg:transform-none md:relative md:left-0 hover:bg-black/20 dark:hover:bg-white/20"
       (click)="toggleDarkMode()"
     >
       <svg
@@ -47,7 +49,7 @@
   <div class="items-center justify-end hidden w-[40%] md:flex select-none">
     <div
       *ngFor="let nav of navList"
-      class="px-4 py-2 cursor-pointer hover:bg-pastel_green/50 dark:hover:bg-dark_pastel_green/50"
+      class="px-4 py-2 cursor-pointer hover:bg-black/20 dark:hover:bg-white/20"
       [routerLink]="nav.link"
       routerLinkActive="active"
     >
@@ -67,12 +69,13 @@
   </div>
   <div
     *ngIf="menuOpen"
-    class="absolute right-0 flex flex-col items-end max-w-full select-none menu w-min top-20 bg-platinum/50 dark:bg-dark_platinum/50 backdrop-blur-sm"
+    class="absolute right-0 flex flex-col items-end max-w-full select-none menu w-min top-20 backdrop-blur-sm bg-black/5 dark:bg-white/5"
     @menuAnimation
   >
     <div
       *ngFor="let nav of navList"
       class="flex items-center justify-end w-full px-8 py-2 text-lg cursor-pointer"
+      (click)="toggleMenu()"
       [routerLink]="nav.link"
       routerLinkActive="active-mobile"
     >

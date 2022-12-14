@@ -1,3 +1,22 @@
 <div class="page-container">
-  <div class="my-20">Projects</div>
+  <div
+    class="flex flex-col justify-center items-start gap-4 w-[90%] max-w-[800px]"
+    @enterAnimation
+  >
+    <div class="p-4">
+      <h1 class="text-3xl font-bold content">Projects</h1>
+      <h5 class="content">Here are some of my projects.</h5>
+    </div>
+    <a
+      *ngFor="let project of projectList"
+      class="p-8 overflow-hidden cursor-pointer bg-white/20 hover:bg-black/10 dark:hover:bg-white/40 content"
+      href="{{ project.link }}"
+      target="_blank"
+    >
+      <div class="w-full h-full hover:scale-110">
+        <div class="text-xl">{{ project.title }}</div>
+        <div class="text-sm">{{ project.description }}</div>
+      </div>
+    </a>
+  </div>
 </div>

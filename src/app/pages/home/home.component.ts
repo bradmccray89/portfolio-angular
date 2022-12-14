@@ -1,50 +1,54 @@
+import {
+  trigger,
+  transition,
+  query,
+  style,
+  stagger,
+  animate,
+} from '@angular/animations';
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [
+    trigger('enterAnimation', [
+      transition(':enter', [
+        query(
+          '.content',
+          [
+            style({ transform: 'translateY(20px)', opacity: 0 }),
+            stagger(
+              '180ms',
+              animate(
+                '1s 300ms ease-out',
+                style({ transform: 'translateY(0)', opacity: 1 })
+              )
+            ),
+          ],
+          { optional: true }
+        ),
+      ]),
+    ]),
+  ],
 })
 export class HomeComponent {
-  selectedSummaryIndex: number;
-  summaryList = [
-    {
-      title: 'Shortest',
-      content: 'I build things for the web.',
-    },
-    {
-      title: 'Short',
-      content:
-        'I have been building websites and web applications for over 5 years.',
-    },
-    {
-      title: 'Normal',
-      content:
-        'I have been building websites and web applications for over 5 years.',
-      contentExtended:
-        'I have experience with a wide range of technologies and frameworks, including Angular, Node, MySQL, and more. I have worked on projects of all sizes, from small personal projects to large enterprise applications.',
-    },
-    {
-      title: 'Long',
-      content:
-        'I gradutated from Liberty University in 2019 with a B.S. in Computer Science and was fortunate enough to start my career as a Software Engineer at a local company in 2017.',
-      contentExtended:
-        'I have been building websites and web applications for over 5 years, and have experience with a wide range of technologies and frameworks, including Angular, Node, MySQL, and more. I have worked on projects of all sizes, from small personal projects to large enterprise applications.',
-    },
-    {
-      title: 'Longest',
-      content: 'Back in the good year of 1989 a legend was born...',
-      contentExtended:
-        "Just kidding...I wouldn't go back that far ;). I absolutely love what I do and I am always looking for new opportunities to learn and grow. I am fortunate to have been building websites and web applications for over 5 years, and have experience with a wide range of technologies and frameworks, including Angular, Node, C#, MySQL, and more. I have worked on projects of all sizes, from small personal projects to large enterprise applications.",
-    },
-  ];
+  darkModeEnabled: boolean;
 
-  constructor() {
-    this.selectedSummaryIndex = 2;
+  constructor(private title: Title) {
+    this.title.setTitle('Brandon McCray');
+    // check if dark class is set to body
+    this.darkModeEnabled = document.body.classList.contains('dark');
   }
 
-  showChange(event: any) {
-    console.log('event', event);
-    console.log('selectedSummary', this.selectedSummaryIndex);
+  ngOnInit(): void {}
+
+  toggleDarkMode(): void {
+    // add dark mode class to body
+    document.body.classList.toggle('dark');
+    // update dark mode state
+    this.darkModeEnabled = document.body.classList.contains('dark');
   }
 }

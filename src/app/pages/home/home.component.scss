@@ -1,14 +1,3 @@
-#btn-about:hover {
-  & > #icon-arrow-right {
-    animation: arrow-right 0.5s ease-in infinite alternate;
-  }
-}
-
-@keyframes arrow-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(10px);
-  }
+.nav-button {
+  @apply w-28 h-10 hover:bg-black/20 hover:dark:bg-white/20;
 }

@@ -8,6 +8,7 @@ import {
   group,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -52,10 +53,25 @@ import { Component, OnInit } from '@angular/core';
         ]),
       ]),
     ]),
+    trigger('navAnimation', [
+      transition(':enter', [
+        query(':self', [
+          style({ opacity: 0 }),
+          animate('500ms ease-out', style({ opacity: 1 })),
+        ]),
+      ]),
+      transition(':leave', [
+        query(':self', [
+          style({ opacity: 1 }),
+          animate('500ms ease-out', style({ opacity: 0 })),
+        ]),
+      ]),
+    ]),
   ],
 })
 export class NavbarComponent implements OnInit {
   darkModeEnabled: boolean;
+  isHome: boolean = true;
   menuOpen: boolean = false;
   navList = [
     { name: 'Home', link: '/home' },
@@ -65,12 +81,20 @@ export class NavbarComponent implements OnInit {
     { name: 'Contact', link: '/contact' },
   ];
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
     // check if dark class is set to body
     this.darkModeEnabled = document.body.classList.contains('dark');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //check if url is home
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const url = event.url.split('/').pop();
+        this.isHome = url === 'home';
+      }
+    });
+  }
 
   toggleDarkMode(): void {
     // add dark mode class to body

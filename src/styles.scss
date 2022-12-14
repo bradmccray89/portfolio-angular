@@ -11,11 +11,15 @@
 }
 
 * {
-  @apply font-light subpixel-antialiased tracking-widest text-dark_text dark:text-light_text transition-all duration-500;
+  @apply font-light subpixel-antialiased tracking-widest text-dark_text dark:text-light_text transition duration-500;
+}
+
+.background {
+  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 object-cover -z-10;
 }
 
 .page-container {
-  @apply flex flex-col items-center justify-start w-full h-full overflow-x-hidden overflow-y-auto md:justify-evenly gap-y-6 md:flex-row;
+  @apply flex flex-col items-center justify-center w-full h-full overflow-x-hidden overflow-y-auto md:justify-evenly gap-y-6 md:flex-row;
 }
 
 .active {
@@ -23,7 +27,7 @@
 }
 
 .active-mobile {
-  @apply bg-pastel_green/50 dark:bg-dark_pastel_green/50 z-50;
+  @apply bg-black/20 dark:bg-white/20 z-50;
 }
 
 .title {

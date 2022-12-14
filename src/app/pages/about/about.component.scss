@@ -1,5 +1,5 @@
 a {
-  @apply relative font-semibold cursor-pointer;
+  @apply relative font-semibold cursor-pointer whitespace-nowrap;
 
   & > span {
     @apply relative z-[2];
@@ -8,7 +8,7 @@ a {
 
 a::before {
   content: "";
-  @apply bg-pastel_green absolute left-0 bottom-0 w-full h-2 z-[1] transition-all duration-300 ease-in-out;
+  @apply bg-green-800/60 absolute left-0 bottom-0 w-full h-full md:h-[6px] z-[1] transition-all duration-300 ease-in-out;
 }
 
 a:hover::before {

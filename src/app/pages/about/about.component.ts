@@ -1,4 +1,12 @@
-import { trigger, transition, style, animate } from '@angular/animations';
+import { Title } from '@angular/platform-browser';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  query,
+  stagger,
+} from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,14 +16,28 @@ import { Component } from '@angular/core';
   animations: [
     trigger('enterAnimation', [
       transition(':enter', [
-        style({ transform: 'translateX(100px)' }),
-        animate('500ms', style({ transform: 'translateX(0)' })),
-      ]),
-      transition(':leave', [
-        style({ transform: 'translateX(0)' }),
-        animate('500ms', style({ transform: 'translateX(-100px)' })),
+        query(
+          '.content',
+          [
+            style({ transform: 'translateY(30px)', opacity: 0 }),
+            stagger(
+              '180ms',
+              animate(
+                '500ms 200ms ease-out',
+                style({ transform: 'translateY(0)', opacity: 1 })
+              )
+            ),
+          ],
+          { optional: true }
+        ),
       ]),
     ]),
   ],
 })
-export class AboutComponent {}
+export class AboutComponent {
+  constructor(private title: Title) {
+    this.title.setTitle('Brandon | About');
+  }
+
+  ngOnInit(): void {}
+}
