@@ -15,7 +15,7 @@
 }
 
 .background {
-  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 object-cover -z-10;
+  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 object-cover bg-fixed -z-10;
 }
 
 .page-container {
