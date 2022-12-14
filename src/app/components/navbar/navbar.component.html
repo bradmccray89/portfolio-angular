@@ -1,5 +1,5 @@
 <div
-  *ngIf="!isHome"
+  *ngIf="showNavbar | async"
   class="fixed top-0 z-50 flex items-center justify-between w-screen h-20 px-4 text-dark_text dark:text-light_text"
   @navAnimation
 >

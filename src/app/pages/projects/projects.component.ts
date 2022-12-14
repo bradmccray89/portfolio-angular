@@ -8,6 +8,7 @@ import {
   stagger,
   animate,
 } from '@angular/animations';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-projects',
@@ -56,8 +57,12 @@ export class ProjectsComponent {
     },
   ];
 
-  constructor(private title: Title) {
+  constructor(
+    private title: Title,
+    private navigationService: NavigationService
+  ) {
     this.title.setTitle('Brandon | Projects');
+    this.navigationService.setShowNavbar(true);
   }
 
   ngOnInit(): void {}

@@ -9,6 +9,8 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -71,7 +73,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   darkModeEnabled: boolean;
-  isHome: boolean = true;
+  showNavbar: Observable<boolean> = this.navigationService.showNavbar$;
   menuOpen: boolean = false;
   navList = [
     { name: 'Home', link: '/home' },
@@ -81,20 +83,15 @@ export class NavbarComponent implements OnInit {
     { name: 'Contact', link: '/contact' },
   ];
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(
+    private router: Router,
+    private navigationService: NavigationService
+  ) {
     // check if dark class is set to body
     this.darkModeEnabled = document.body.classList.contains('dark');
   }
 
-  ngOnInit(): void {
-    //check if url is home
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const url = event.url.split('/').pop();
-        this.isHome = url === 'home';
-      }
-    });
-  }
+  ngOnInit(): void {}
 
   toggleDarkMode(): void {
     // add dark mode class to body
@@ -106,10 +103,5 @@ export class NavbarComponent implements OnInit {
   toggleMenu(): void {
     // toggle menu
     this.menuOpen = !this.menuOpen;
-  }
-
-  getNavIndex(index: number): number {
-    // return index + 1 to start from 1
-    return index + 1;
   }
 }

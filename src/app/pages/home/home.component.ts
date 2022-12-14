@@ -1,3 +1,4 @@
+import { NavigationService } from './../../services/navigation.service';
 import {
   trigger,
   transition,
@@ -37,13 +38,18 @@ import { Title } from '@angular/platform-browser';
 export class HomeComponent {
   darkModeEnabled: boolean;
 
-  constructor(private title: Title) {
+  constructor(
+    private title: Title,
+    private navigationService: NavigationService
+  ) {
     this.title.setTitle('Brandon McCray');
     // check if dark class is set to body
     this.darkModeEnabled = document.body.classList.contains('dark');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navigationService.setShowNavbar(false);
+  }
 
   toggleDarkMode(): void {
     // add dark mode class to body
