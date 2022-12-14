@@ -1,11 +1,13 @@
-<div class="z-10 w-screen h-screen">
-  <app-navbar></app-navbar>
-  <div
-    class="w-full h-full overflow-hidden"
-    [@fadeInOut]="getRouterAnimation()"
-  >
-    <router-outlet></router-outlet>
+<div class="w-screen h-screen background">
+  <div class="w-full h-full invert dark:invert-0">
+    <app-navbar></app-navbar>
+    <div
+      class="w-full h-full overflow-hidden"
+      [@fadeInOut]="getRouterAnimation()"
+    >
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </div>
-<img class="background" src="assets/images/abstract.jpg" />
+<!-- <img class="background" src="assets/images/abstract.jpg" /> -->

@@ -15,7 +15,8 @@
 }
 
 .background {
-  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 object-cover bg-fixed -z-10;
+  @apply absolute w-full h-full top-0 left-0 invert-[90%] dark:invert-0 bg-fixed bg-center bg-cover -z-10;
+  background-image: url(/assets/images/abstract.jpg);
 }
 
 .page-container {
