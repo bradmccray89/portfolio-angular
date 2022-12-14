@@ -24,7 +24,7 @@ import { Title } from '@angular/platform-browser';
             stagger(
               '180ms',
               animate(
-                '1s 300ms ease-out',
+                '1s ease-out',
                 style({ transform: 'translateY(0)', opacity: 1 })
               )
             ),
