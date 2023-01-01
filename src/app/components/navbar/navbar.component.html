@@ -69,12 +69,12 @@
   </div>
   <div
     *ngIf="menuOpen"
-    class="absolute right-0 flex flex-col items-end max-w-full select-none w-min top-20 backdrop-blur-sm bg-black/5 dark:bg-white/5"
+    class="absolute right-0 z-50 flex flex-col items-center w-full max-w-full select-none bg-light_text top-20 dark:bg-dark_text"
     @menuAnimation
   >
     <div
       *ngFor="let nav of navList"
-      class="flex items-center justify-end w-full px-8 py-2 text-lg cursor-pointer"
+      class="flex items-center justify-center w-full px-8 py-2 text-lg cursor-pointer"
       (click)="toggleMenu()"
       [routerLink]="nav.link"
       routerLinkActive="bg-black/20 dark:bg-white/20 z-50"
