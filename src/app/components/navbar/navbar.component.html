@@ -17,7 +17,7 @@
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      class="relative flex items-center justify-center w-10 h-10 p-1 rounded-full lg:transform-none md:relative md:left-0 hover:bg-black/20 dark:hover:bg-white/20"
+      class="relative flex items-center justify-center w-10 h-10 p-1 rounded-full lg:transform-none md:relative md:left-0 md:hover:bg-black/20 md:dark:hover:bg-white/20"
       (click)="toggleDarkMode()"
     >
       <svg
@@ -49,7 +49,7 @@
   <div class="items-center justify-end hidden w-[40%] md:flex select-none">
     <div
       *ngFor="let nav of navList"
-      class="px-4 py-2 cursor-pointer hover:bg-black/20 dark:hover:bg-white/20"
+      class="px-4 py-2 cursor-pointer md:hover:bg-black/20 md:dark:hover:bg-white/20"
       [routerLink]="nav.link"
       routerLinkActive="active"
     >

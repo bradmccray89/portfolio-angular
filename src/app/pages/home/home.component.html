@@ -9,35 +9,36 @@
       class="flex flex-col items-center justify-center gap-4 transition-none md:gap-1 md:flex-row"
     >
       <button
-        class="h-10 w-28 hover:bg-black/20 hover:dark:bg-white/20 content"
+        class="h-10 w-28 md:hover:bg-black/20 md:hover:dark:bg-white/20 content"
         routerLink="/about"
       >
         About
       </button>
       <button
-        class="h-10 w-28 hover:bg-black/20 hover:dark:bg-white/20 content"
+        class="h-10 w-28 md:hover:bg-black/20 md:hover:dark:bg-white/20 content"
         routerLink="/projects"
       >
         Projects
       </button>
       <button
-        class="h-10 w-28 hover:bg-black/20 hover:dark:bg-white/20 content"
+        class="h-10 w-28 md:hover:bg-black/20 md:hover:dark:bg-white/20 content"
         routerLink="/contact"
       >
         Contact
       </button>
-      <button
-        class="h-10 w-28 hover:bg-black/20 hover:dark:bg-white/20 content"
+      <a
+        class="flex items-center justify-center h-10 w-28 md:hover:bg-black/20 md:hover:dark:bg-white/20 content"
+        href="/Brandon_McCray_Resume.pdf"
       >
         Resume
-      </button>
+      </a>
     </div>
     <span class="block h-8 my-4 border-r border-current content"></span>
     <div class="flex items-center justify-center transition-none content">
       <button
         aria-label="Toggle Dark Mode"
         type="button"
-        class="relative flex items-center justify-center w-10 h-10 p-1 border border-current rounded-full lg:transform-none md:relative md:left-0 dark:hover:bg-white/20 hover:bg-black/20"
+        class="relative flex items-center justify-center w-10 h-10 p-1 border border-current rounded-full lg:transform-none md:relative md:left-0 dark:md:hover:bg-white/20 md:hover:bg-black/20"
         (click)="toggleDarkMode()"
       >
         <svg
@@ -46,7 +47,7 @@
           viewBox="0 0 24 24"
           fill="currentColor"
           class="absolute w-6 h-6"
-          @fade
+          @fadeRotate
         >
           <path
             d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
@@ -58,7 +59,7 @@
           viewBox="0 0 24 24"
           fill="currentColor"
           class="absolute w-6 h-6"
-          @fade
+          @fadeRotate
         >
           <path
             fill-rule="evenodd"

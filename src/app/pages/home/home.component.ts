@@ -33,14 +33,20 @@ import { Title } from '@angular/platform-browser';
         ),
       ]),
     ]),
-    trigger('fade', [
+    trigger('fadeRotate', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('500ms ease-out', style({ opacity: 1 })),
+        style({ opacity: 0, transform: 'rotate(-45deg)' }),
+        animate(
+          '500ms ease-out',
+          style({ opacity: 1, transform: 'rotate(0)' })
+        ),
       ]),
       transition(':leave', [
-        style({ opacity: 1 }),
-        animate('500ms ease-out', style({ opacity: 0 })),
+        style({ opacity: 1, transform: 'rotate(0)' }),
+        animate(
+          '500ms ease-out',
+          style({ opacity: 0, transform: 'rotate(45deg)' })
+        ),
       ]),
     ]),
   ],
