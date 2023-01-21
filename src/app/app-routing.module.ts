@@ -1,3 +1,4 @@
+import { ResumeComponent } from './pages/resume/resume.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { NgModule } from '@angular/core';
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'blog',
     component: BlogComponent,
     data: { animation: 'blog' },
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent,
   },
   {
     path: '**',

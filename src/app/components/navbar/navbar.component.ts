@@ -81,6 +81,7 @@ export class NavbarComponent implements OnInit {
     // { name: 'Blog', link: '/blog'},
     { name: 'Projects', link: '/projects' },
     { name: 'Contact', link: '/contact' },
+    { name: 'Resume', link: '/resume' },
   ];
 
   constructor(
