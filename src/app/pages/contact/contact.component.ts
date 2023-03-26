@@ -1,4 +1,3 @@
-import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
 import {
@@ -36,11 +35,7 @@ import {
   ],
 })
 export class ContactComponent {
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon | Contact Me');
+  constructor(private navigationService: NavigationService) {
     this.navigationService.setShowNavbar(true);
   }
 

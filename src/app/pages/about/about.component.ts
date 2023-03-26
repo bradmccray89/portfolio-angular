@@ -1,4 +1,3 @@
-import { Title } from '@angular/platform-browser';
 import {
   trigger,
   transition,
@@ -36,11 +35,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
   ],
 })
 export class AboutComponent {
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon | About');
+  constructor(private navigationService: NavigationService) {
     this.navigationService.setShowNavbar(true);
   }
 

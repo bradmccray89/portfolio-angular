@@ -8,7 +8,6 @@ import {
   animate,
 } from '@angular/animations';
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -54,11 +53,7 @@ import { Title } from '@angular/platform-browser';
 export class HomeComponent {
   darkModeEnabled: boolean;
 
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon McCray');
+  constructor(private navigationService: NavigationService) {
     // check if dark class is set to body
     this.darkModeEnabled = document.body.classList.contains('dark');
   }

@@ -1,4 +1,3 @@
-import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
 
@@ -8,11 +7,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent {
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon | Blog');
+  constructor(private navigationService: NavigationService) {
     this.navigationService.setShowNavbar(true);
   }
 

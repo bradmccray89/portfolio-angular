@@ -1,4 +1,3 @@
-import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import {
   trigger,
@@ -57,11 +56,7 @@ export class ProjectsComponent {
     },
   ];
 
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon | Projects');
+  constructor(private navigationService: NavigationService) {
     this.navigationService.setShowNavbar(true);
   }
 
