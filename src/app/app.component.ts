@@ -11,7 +11,12 @@ import { ChildrenOutletContexts } from '@angular/router';
 export class AppComponent {
   title = 'portfolio';
 
-  constructor(private contexts: ChildrenOutletContexts) {}
+  constructor(private contexts: ChildrenOutletContexts) {
+    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (darkMode) {
+      document.body.classList.add('dark');
+    }
+  }
 
   getRouterAnimation() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[

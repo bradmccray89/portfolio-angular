@@ -8,6 +8,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-resume',
@@ -35,9 +36,13 @@ import {
   ],
 })
 export class ResumeComponent implements OnInit {
-  constructor(private navigationService: NavigationService) {}
+  constructor(private navigationService: NavigationService) {
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty('--item-height', `${vh}px`);
+  }
 
   ngOnInit(): void {
+    AOS.init();
     this.navigationService.setShowNavbar(true);
   }
 }

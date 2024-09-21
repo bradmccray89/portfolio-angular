@@ -9,8 +9,8 @@
     </div>
     <a
       *ngFor="let project of projectList"
-      class="w-full overflow-hidden cursor-pointer bg-white/20 md:hover:bg-white/50 content"
-      href="{{ project.link }}"
+      class="w-full overflow-hidden cursor-pointer bg-white/20 md:hover:bg-[#5c8567]/50 content"
+      [href]="project.link"
       target="_blank"
     >
       <div class="w-full h-full p-8 md:hover:scale-105">

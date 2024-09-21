@@ -36,12 +36,28 @@ import { NavigationService } from 'src/app/services/navigation.service';
   ],
 })
 export class AboutComponent {
+  experienceInYears: number;
+
   constructor(
     private title: Title,
     private navigationService: NavigationService
   ) {
     this.title.setTitle('Brandon | About');
     this.navigationService.setShowNavbar(true);
+
+    // Define the specific date
+    const specificDate = new Date('07/15/2017');
+
+    // Get the current date
+    const currentDate = new Date();
+
+    // Calculate the difference in milliseconds
+    const diffInMilliseconds = currentDate.getTime() - specificDate.getTime();
+
+    // Convert milliseconds to years
+    const diffInYears = diffInMilliseconds / (1000 * 60 * 60 * 24 * 365);
+
+    this.experienceInYears = Math.floor(diffInYears);
   }
 
   ngOnInit(): void {}
