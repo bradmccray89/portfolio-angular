@@ -13,30 +13,36 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     data: { animation: 'home' },
+    title: 'Brandon McCray',
   },
   {
     path: 'about',
     component: AboutComponent,
     data: { animation: 'about' },
+    title: 'Brandon | About',
   },
   {
     path: 'contact',
     component: ContactComponent,
     data: { animation: 'contact' },
+    title: 'Brandon | Contact',
   },
   {
     path: 'projects',
     component: ProjectsComponent,
     data: { animation: 'projects' },
+    title: 'Brandon | Projects',
   },
   // {
   //   path: 'blog',
   //   component: BlogComponent,
   //   data: { animation: 'blog' },
+  //   title: 'Brandon | Blog',
   // },
   // {
   //   path: 'resume',
   //   component: ResumeComponent,
+  //   title: 'Brandon | Resume',
   // },
   {
     path: '**',

@@ -8,45 +8,56 @@ import {
   animate,
 } from '@angular/animations';
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    animations: [
-        trigger('enterAnimation', [
-            transition(':enter', [
-                query('.content', [
-                    style({ transform: 'translateY(20px)', opacity: 0 }),
-                    stagger('180ms', animate('1s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))),
-                ], { optional: true }),
-            ]),
-        ]),
-        trigger('fadeRotate', [
-            transition(':enter', [
-                style({ opacity: 0, transform: 'rotate(-45deg)' }),
-                animate('500ms ease-out', style({ opacity: 1, transform: 'rotate(0)' })),
-            ]),
-            transition(':leave', [
-                style({ opacity: 1, transform: 'rotate(0)' }),
-                animate('500ms ease-out', style({ opacity: 0, transform: 'rotate(45deg)' })),
-            ]),
-        ]),
-    ],
-    standalone: true,
-    imports: [RouterLink, NgIf],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    trigger('enterAnimation', [
+      transition(':enter', [
+        query(
+          '.content',
+          [
+            style({ transform: 'translateY(20px)', opacity: 0 }),
+            stagger(
+              '180ms',
+              animate(
+                '1s ease-out',
+                style({ transform: 'translateY(0)', opacity: 1 })
+              )
+            ),
+          ],
+          { optional: true }
+        ),
+      ]),
+    ]),
+    trigger('fadeRotate', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'rotate(-45deg)' }),
+        animate(
+          '500ms ease-out',
+          style({ opacity: 1, transform: 'rotate(0)' })
+        ),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1, transform: 'rotate(0)' }),
+        animate(
+          '500ms ease-out',
+          style({ opacity: 0, transform: 'rotate(45deg)' })
+        ),
+      ]),
+    ]),
+  ],
+  standalone: true,
+  imports: [RouterLink, NgIf],
 })
 export class HomeComponent {
   darkModeEnabled: boolean;
 
-  constructor(
-    private title: Title,
-    private navigationService: NavigationService
-  ) {
-    this.title.setTitle('Brandon McCray');
+  constructor(private navigationService: NavigationService) {
     // check if dark class is set to body
     this.darkModeEnabled = document.body.classList.contains('dark');
   }
