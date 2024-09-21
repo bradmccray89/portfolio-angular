@@ -8,9 +8,16 @@ import {
   group,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -70,6 +77,8 @@ import { NavigationService } from 'src/app/services/navigation.service';
       ]),
     ]),
   ],
+  standalone: true,
+  imports: [NgIf, RouterLink, NgFor, RouterLinkActive, NgClass, AsyncPipe],
 })
 export class NavbarComponent implements OnInit {
   darkModeEnabled: boolean;
@@ -81,7 +90,7 @@ export class NavbarComponent implements OnInit {
     // { name: 'Blog', link: '/blog'},
     { name: 'Projects', link: '/projects' },
     { name: 'Contact', link: '/contact' },
-    { name: 'Resume', link: '/resume' },
+    // { name: 'Resume', link: '/resume' },
   ];
 
   constructor(

@@ -11,29 +11,20 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
-  animations: [
-    trigger('enterAnimation', [
-      transition(':enter', [
-        query(
-          '.content',
-          [
-            style({ transform: 'translateY(30px)', opacity: 0 }),
-            stagger(
-              '180ms',
-              animate(
-                '500ms 200ms ease-out',
-                style({ transform: 'translateY(0)', opacity: 1 })
-              )
-            ),
-          ],
-          { optional: true }
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.scss'],
+    animations: [
+        trigger('enterAnimation', [
+            transition(':enter', [
+                query('.content', [
+                    style({ transform: 'translateY(30px)', opacity: 0 }),
+                    stagger('180ms', animate('500ms 200ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))),
+                ], { optional: true }),
+            ]),
+        ]),
+    ],
+    standalone: true,
 })
 export class ContactComponent {
   constructor(

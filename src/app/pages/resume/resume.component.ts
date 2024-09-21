@@ -8,32 +8,22 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import * as AOS from 'aos';
 
 @Component({
-  selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss'],
-  animations: [
-    trigger('enterAnimation', [
-      transition(':enter', [
-        query(
-          '.content',
-          [
-            style({ transform: 'translateY(30px)', opacity: 0 }),
-            stagger(
-              '180ms',
-              animate(
-                '500ms 200ms ease-out',
-                style({ transform: 'translateY(0)', opacity: 1 })
-              )
-            ),
-          ],
-          { optional: true }
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'app-resume',
+    templateUrl: './resume.component.html',
+    styleUrls: ['./resume.component.scss'],
+    animations: [
+        trigger('enterAnimation', [
+            transition(':enter', [
+                query('.content', [
+                    style({ transform: 'translateY(30px)', opacity: 0 }),
+                    stagger('180ms', animate('500ms 200ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))),
+                ], { optional: true }),
+            ]),
+        ]),
+    ],
+    standalone: true,
 })
 export class ResumeComponent implements OnInit {
   constructor(private navigationService: NavigationService) {
@@ -42,7 +32,6 @@ export class ResumeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    AOS.init();
     this.navigationService.setShowNavbar(true);
   }
 }

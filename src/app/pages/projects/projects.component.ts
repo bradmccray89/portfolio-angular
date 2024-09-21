@@ -9,31 +9,24 @@ import {
   animate,
 } from '@angular/animations';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
-  animations: [
-    trigger('enterAnimation', [
-      transition(':enter', [
-        query(
-          '.content',
-          [
-            style({ transform: 'translateY(30px)', opacity: 0 }),
-            stagger(
-              '180ms',
-              animate(
-                '500ms 200ms ease-out',
-                style({ transform: 'translateY(0)', opacity: 1 })
-              )
-            ),
-          ],
-          { optional: true }
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    animations: [
+        trigger('enterAnimation', [
+            transition(':enter', [
+                query('.content', [
+                    style({ transform: 'translateY(30px)', opacity: 0 }),
+                    stagger('180ms', animate('500ms 200ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))),
+                ], { optional: true }),
+            ]),
+        ]),
+    ],
+    standalone: true,
+    imports: [NgFor],
 })
 export class ProjectsComponent {
   projectList = [

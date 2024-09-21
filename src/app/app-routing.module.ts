@@ -29,15 +29,15 @@ const routes: Routes = [
     component: ProjectsComponent,
     data: { animation: 'projects' },
   },
-  {
-    path: 'blog',
-    component: BlogComponent,
-    data: { animation: 'blog' },
-  },
-  {
-    path: 'resume',
-    component: ResumeComponent,
-  },
+  // {
+  //   path: 'blog',
+  //   component: BlogComponent,
+  //   data: { animation: 'blog' },
+  // },
+  // {
+  //   path: 'resume',
+  //   component: ResumeComponent,
+  // },
   {
     path: '**',
     redirectTo: 'home',
