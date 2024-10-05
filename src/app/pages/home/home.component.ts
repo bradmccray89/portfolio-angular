@@ -8,8 +8,8 @@ import {
   animate,
 } from '@angular/animations';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -52,7 +52,7 @@ import { NgIf } from '@angular/common';
     ]),
   ],
   standalone: true,
-  imports: [RouterLink, NgIf],
+  imports: [RouterModule, CommonModule],
 })
 export class HomeComponent {
   darkModeEnabled: boolean;
